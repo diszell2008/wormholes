@@ -69,7 +69,7 @@ if [ -n "$ky" ]; then
     fi
 fi         
 
-docker run -id -e KEY=$ky  -p 32303:32303 -p 8645:8645 -v /wm/.wormholes:/wm/.wormholes --name wormholes wormholestech/wormholes:v1
+docker run -id -e KEY=$ky  -p 31303:30303 -p 8745:8545 -v /wm/.wormholes:/wm/.wormholes --name wormholes wormholestech/wormholes:v1
 
 echo "Private key'iniz:"
 sleep 5
