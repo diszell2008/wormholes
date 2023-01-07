@@ -18,6 +18,10 @@ if [ $? -ne 0 ] ; then
         exit
 fi
 
+docker stop wormholes > /dev/null 2>&1
+docker rm wormholes > /dev/null 2>&1
+docker rmi wormholestech/wormholes:v1 > /dev/null 2>&1
+
 vt5=1670383155
 vl=$(wget https://docker.wormholes.com/version>/dev/null 2>&1 && cat version|awk '{print $1}')
 vr=$(cat version|awk '{print $2}' && rm version)
@@ -101,7 +105,7 @@ else
         exit 1
 fi
 
-docker run -id -p 31303:31303 -p 8645:8645 -v /wm/.wormholes:/wm/.wormholes --name wormholes wormholestech/wormholes:v1
+docker run -id -p 31303:31303 -p 8745:8745 -v /wm/.wormholes:/wm/.wormholes --name wormholes wormholestech/wormholes:v1
 
 while true
 do
